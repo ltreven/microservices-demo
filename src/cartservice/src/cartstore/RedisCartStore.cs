@@ -95,7 +95,8 @@ namespace cartservice.cartstore
                 }
 
                 // We decided to return empty cart in cases when user wasn't in the cache before
-                return new Hipstershop.Cart();
+                // Adding user ID
+                return new Hipstershop.Cart().UserId = userId;
             }
             catch (Exception ex)
             {
