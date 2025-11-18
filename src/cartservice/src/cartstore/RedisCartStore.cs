@@ -61,6 +61,7 @@ namespace cartservice.cartstore
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error occurred while adding item to cart: {ex}");
                 throw new RpcException(new Status(StatusCode.FailedPrecondition, $"Can't access cart storage. {ex}"));
             }
         }
@@ -76,6 +77,7 @@ namespace cartservice.cartstore
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error occurred while emptying cart: {ex}");
                 throw new RpcException(new Status(StatusCode.FailedPrecondition, $"Can't access cart storage. {ex}"));
             }
         }
@@ -99,6 +101,7 @@ namespace cartservice.cartstore
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error occurred while getting cart: {ex}");
                 throw new RpcException(new Status(StatusCode.FailedPrecondition, $"Can't access cart storage. {ex}"));
             }
         }
